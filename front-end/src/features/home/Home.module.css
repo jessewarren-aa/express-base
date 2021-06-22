@@ -1,0 +1,6 @@
+.homeRoute {
+  background: lightskyblue;
+  height: calc(100% - 171px);
+
+  padding: 50px;
+}
