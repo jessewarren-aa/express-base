@@ -3,12 +3,11 @@ const { User, Session } = require("../models")
 
 const userLoggedIn = async (user_id, session_token) => {
   if (!session_token) { return false }
-  const sessions = await Session.findAll({
+  const session = await Session.findOne({
     where: {
       session_uuid: session_token
     }
   });
-  const session = sessions[0];
 
   const user = await User.findByPk(user_id);
 
