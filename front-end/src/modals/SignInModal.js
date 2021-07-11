@@ -37,7 +37,7 @@ export function SignInModal () {
 
   useEffect(() => {
     const asyncValidateAuthToken = async (auth_token) => {
-      const result = await fetch("http://localhost:5000/sessions/validate", {
+      const result = await fetch("http://localhost:5000/api/sessions/validate", {
         method: "GET",
         headers: {
           'Accept': 'application/json',

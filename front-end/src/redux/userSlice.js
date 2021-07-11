@@ -24,7 +24,7 @@ export const {
 } = userSlice.actions;
 
 export const getCurrentUser = (auth_token) => async dispatch => {
-  const result = await fetch("http://localhost:5000/users", {
+  const result = await fetch("http://localhost:5000/api/users", {
     method: "GET",
     headers: {
       'Accept': 'application/json',
@@ -42,7 +42,7 @@ export const getCurrentUser = (auth_token) => async dispatch => {
 }
 
 export const signUpUser = (user) => async dispatch => {
-  const result = await fetch("http://localhost:5000/users", {
+  const result = await fetch("http://localhost:5000/api/users", {
     method: "POST",
     headers: {
       'Accept': 'application/json',
