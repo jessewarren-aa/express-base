@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 const bcrypt = require('bcryptjs');
 const { v4 } = require('uuid');
-const { User, Session } = require("../models");
-const { authRoute } = require("../util/session_util");
+const { User, Session } = require("../../models");
+const { authRoute } = require("../../util/session_util");
 
 router.get('/validate', authRoute, async (req, res) => {
   res.json({data: "success"});

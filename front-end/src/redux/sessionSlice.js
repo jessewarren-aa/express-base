@@ -37,7 +37,7 @@ export const {
 } = sessionSlice.actions;
 
 export const validateLogin = ({username, password}) => async dispatch => {
-  const result = await fetch("http://localhost:5000/sessions/login", {
+  const result = await fetch("http://localhost:5000/api/sessions/login", {
     method: "POST",
     headers: {
       'Accept': 'application/json',
@@ -62,7 +62,7 @@ export const validateLogin = ({username, password}) => async dispatch => {
 };
 
 export const logoutCurrentUser = (auth_token) => async dispatch => {
-  const result = await fetch("http://localhost:5000/sessions/logout", {
+  const result = await fetch("http://localhost:5000/api/sessions/logout", {
     method: "DELETE",
     headers: {
       'Accept': 'application/json',

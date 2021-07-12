@@ -3,8 +3,8 @@ var router = express.Router();
 
 const bcrypt = require('bcryptjs');
 
-const { authRoute } = require("../util/session_util");
-const { User } = require("../models");
+const { authRoute } = require("../../util/session_util");
+const { User } = require("../../models");
 
 router.get("/", authRoute, async (req, res) => {
   const userId = req.headers.auth_token.split(":")[0];

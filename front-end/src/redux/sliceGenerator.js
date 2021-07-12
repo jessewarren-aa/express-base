@@ -38,7 +38,7 @@ const generateSlice = (name, local = true) => {
     newSlice
       .thunks[`getOne${name[0].toUpperCase() + name.substring(1)}`] = 
         (auth_token, id) => async dispatch => {
-          const result = await fetch(`http://localhost:5000/${name}/${id}`, {
+          const result = await fetch(`http://localhost:5000/api/${name}/${id}`, {
             method: "GET",
             headers: {
               'Accept': 'application/json',
@@ -63,7 +63,7 @@ const generateSlice = (name, local = true) => {
     newSlice
       .thunks[`getAll${name[0].toUpperCase() + name.substring(1)}`] = 
         (auth_token) => async dispatch =>  {
-          const result = await fetch(`http://localhost:5000/${name}`, {
+          const result = await fetch(`http://localhost:5000/api/${name}`, {
             method: "GET",
             headers: {
               'Accept': 'application/json',
@@ -91,7 +91,7 @@ const generateSlice = (name, local = true) => {
     newSlice
       .thunks[`create${name[0].toUpperCase() + name.substring(1)}`] = 
         (auth_token, body) => async dispatch =>  {
-          const result = await fetch(`http://localhost:5000/${name}`, {
+          const result = await fetch(`http://localhost:5000/api/${name}`, {
             method: "POST",
             headers: {
               'Accept': 'application/json',
@@ -117,7 +117,7 @@ const generateSlice = (name, local = true) => {
     newSlice
       .thunks[`update${name[0].toUpperCase() + name.substring(1)}`] = 
         (auth_token, body) => async dispatch =>  {
-          const result = await fetch(`http://localhost:5000/${name}/${body.id}`, {
+          const result = await fetch(`http://localhost:5000/api/${name}/${body.id}`, {
             method: "PATCH",
             headers: {
               'Accept': 'application/json',
@@ -143,7 +143,7 @@ const generateSlice = (name, local = true) => {
     newSlice
       .thunks[`destroy${name[0].toUpperCase() + name.substring(1)}`] = 
         (auth_token, id) => async dispatch =>  {
-          const result = await fetch(`http://localhost:5000/${name}/${id}`, {
+          const result = await fetch(`http://localhost:5000/api/${name}/${id}`, {
             method: "DELETE",
             headers: {
               'Accept': 'application/json',
